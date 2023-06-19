@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myapp-deployment
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: myapp
+  template:
+    metadata:
+      labels:
+        app: myapp
+        zone: prod
+        version: v1
+    spec:
+      containers:
+        - name: myapp-frontend
+          image:  chiragdockernagp/myapp:frontend
+          ports:
+            - containerPort: 80
+          env:
+            - name: ConnectionStrings__MyAppDbContext
+              valueFrom:
+                configMapKeyRef:
+                  name: db-config
+                  key: database_uri              
+
