@@ -3,4 +3,4 @@ kind: ConfigMap
 metadata:
   name: db-config
 data:
-  database_uri: "Server= 10.115.129.255;Database=myapp;User=sa;Password=A&VeryComplex123Password;MultipleActiveResultSets=true;TrustServerCertificate=True"
+  database_uri: "Server= 10.104.128.250;Database=myapp;User=sa;Password=A&VeryComplex123Password;MultipleActiveResultSets=true;TrustServerCertificate=True"

@@ -24,5 +24,4 @@ spec:
               valueFrom:
                 configMapKeyRef:
                   name: db-config
-                  key: database_uri              
-
+                  key: database_uri
